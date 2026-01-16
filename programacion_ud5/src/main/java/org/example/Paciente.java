@@ -52,6 +52,8 @@ public class Paciente {
 
         double resultado = peso / Math.pow((double) altura /100,2);
 
+        System.out.println(resultado);
+
         if (resultado < 20 ){
             return INFRAPESO;
         } else if (resultado > 25 ) {

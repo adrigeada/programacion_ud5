@@ -8,7 +8,7 @@ public class PacienteApp {
 
         System.out.println(adri.getDni() + " "+ adri.getNombre() );
 
-        Paciente prueba = new Paciente("Patri", 32, 'M' , 40, 160);
+        Paciente prueba = new Paciente("Patri", 32, 'M' , 100, 150);
 
         System.out.println(prueba.calcularIMC());
 
