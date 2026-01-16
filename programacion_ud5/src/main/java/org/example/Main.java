@@ -5,6 +5,7 @@ package org.example;
 public class Main {
     static void main() {
 
+
         Bocadillo pepito = new Bocadillo("Pepito","normal","bacon","Kepchup",10.0); //se llama al constructor que recive todos los parametros
 
         pepito.imprimirInfoBocata();
