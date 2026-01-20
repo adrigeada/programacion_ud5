@@ -8,9 +8,21 @@ public class PacienteApp {
 
         System.out.println(adri.getDni() + " "+ adri.getNombre() );
 
-        Paciente prueba = new Paciente("Patri", 32, 'M' , 100, 150);
+        Paciente prueba = new Paciente("Patri", 32, 'M' , 60, 166);
 
         System.out.println(prueba.calcularIMC());
+
+        if (prueba.esMayorDeEdad()){
+            System.out.println("Mayor de edad");
+        }else {
+            System.out.println("Menor de edad");
+        }
+
+        Paciente pepe = new Paciente("Pepe",80,'G',80,180);
+
+        System.out.println(pepe.getGenero());
+
+        System.out.println(pepe);
 
 
     }
