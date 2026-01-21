@@ -120,9 +120,9 @@ public class Paciente {
         return dni;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
+//    public void setDni(String dni) { Este se quita porque el dni se genera con logica, nadie lo va a usar
+//        this.dni = dni;
+//    }
 
     public char getGenero() {
         return genero;

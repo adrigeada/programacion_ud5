@@ -16,5 +16,10 @@ public class EstudianteApp {
         Estudiante adri = new Estudiante("Adri");
         System.out.println(adri);
 
+        System.out.println(Estudiante.obtenerTotalEstudiantes());
+
+        System.out.println(Estudiante.validarCorreo("hola@mutxamel.com"));
+        System.out.println(Estudiante.validarCorreo("hola@alu.edu.gva.es"));
+
     }
 }
