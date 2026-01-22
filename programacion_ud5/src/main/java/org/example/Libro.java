@@ -5,31 +5,40 @@ public class Libro {
     private static int cantidadLibros = 0;
     private static int librosDisponibles = 0;
 
+    private static final String CADENA_ID = "LIB";
+
     private String titulo;
     private String autor;
     private String id;
     private boolean disponible;
+    private Estudiante estudiantePrestado;
+
+
 
     public Libro(String titulo, String autor){
         this.titulo = titulo;
         this.autor = autor;
         disponible = true;
-        ++cantidadLibros;
-        ++librosDisponibles;
+        cantidadLibros++;
+        librosDisponibles++;
         id=calcularID();
+        estudiantePrestado = null; //empieza nulo, lo pide en el ejercicio. Cuando se le presta un libro a un estudiante, estudiante prestado pasa a ser el estudiante que le han pasado al metodo prestar
     }
 
     private static String calcularID(){
-        return "LIB00"+cantidadLibros;
+       return CADENA_ID + cantidadLibros;
     }
 
-    public void prestar(){
+    public void prestar(Estudiante estudiante){
         if (disponible){
             disponible=false;
+            System.out.println("El libro "+titulo+" ha sido prestado con éxito a " +estudiante.getNombre());
             librosDisponibles--;
-            System.out.println("El libro ha sido prestado con éxito");
+            estudiantePrestado = estudiante; //estudiante ahora es el estudiante que le has pasado desde el main al metodo prestar
+            estudiante.setLibro(this); //el atributo libro de estudiante ahora es this (el objeto en el que estamos)
+
         }else {
-            System.out.println("El libro ya está prestado, no se puede prestar");
+            System.out.println("El libro " + titulo+" no está disponible");
         }
 
     }
@@ -38,9 +47,11 @@ public class Libro {
         if (!disponible){
             disponible = true;
             librosDisponibles++;
-            System.out.println("El libro ha sido devuelto con éxito");
+            System.out.println("El libro ha sido devuelto con éxito por "+estudiantePrestado.getNombre());
+            estudiantePrestado.setLibro(null);
+            estudiantePrestado = null;
         }else {
-            System.out.println("El libro no estaba prestado");
+            System.out.println("El libro no estaba prestado.");
         }
     }
 
@@ -48,7 +59,7 @@ public class Libro {
         return disponible;
     }
 
-    public static int getTotalLibros(){
+    public static int getTotalLibros(){ //los metodos estaticos no usan atributos y se usan para toda la clase, se llaman con Libro no con nombre del libro
         return cantidadLibros;
     }
 
@@ -77,9 +88,9 @@ public class Libro {
     }
 
 
-    public void setId(String id) {
-        this.id = id;
-    }
+//    public void setId(String id) {
+//        this.id = id;
+//    }
 
     public boolean isDisponible() {
         return disponible;
@@ -89,16 +100,18 @@ public class Libro {
         this.disponible = disponible;
     }
 
+    public Estudiante getEstudiantePrestado() {
+        return estudiantePrestado;
+    }
+
     @Override
-    public String toString() { // \n baja de linea
-        return "Total de libros creados: " + cantidadLibros + '\n'+
-                "Libros disponibles: " + librosDisponibles + '\n' +
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
                 ", id='" + id + '\'' +
                 ", disponible=" + disponible +
+                ",estudiante=" + estudiantePrestado+
                 '}';
     }
-
-
-
 }

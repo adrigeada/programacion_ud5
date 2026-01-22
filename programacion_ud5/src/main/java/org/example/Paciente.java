@@ -121,6 +121,7 @@ public class Paciente {
     }
 
 //    public void setDni(String dni) { Este se quita porque el dni se genera con logica, nadie lo va a usar
+
 //        this.dni = dni;
 //    }
 
