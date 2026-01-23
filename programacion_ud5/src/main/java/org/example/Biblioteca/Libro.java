@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Biblioteca;
 
 public class Libro {
 
@@ -12,10 +12,10 @@ public class Libro {
     private String id;
     private boolean disponible;
     private Estudiante estudiantePrestado;
+    private Editorial editorial;
 
 
-
-    public Libro(String titulo, String autor){
+    public Libro(String titulo, String autor, Editorial editorial){
         this.titulo = titulo;
         this.autor = autor;
         disponible = true;
@@ -23,6 +23,7 @@ public class Libro {
         librosDisponibles++;
         id=calcularID();
         estudiantePrestado = null; //empieza nulo, lo pide en el ejercicio. Cuando se le presta un libro a un estudiante, estudiante prestado pasa a ser el estudiante que le han pasado al metodo prestar
+        this.editorial = editorial;
     }
 
     private static String calcularID(){
@@ -30,14 +31,17 @@ public class Libro {
     }
 
     public void prestar(Estudiante estudiante){
-        if (disponible){
-            disponible=false;
-            System.out.println("El libro "+titulo+" ha sido prestado con éxito a " +estudiante.getNombre());
+        if (disponible && estudiante.getLibro() == null) {
+            disponible = false;
+            System.out.println("El libro " + titulo + " ha sido prestado con éxito a " + estudiante.getNombre());
             librosDisponibles--;
             estudiantePrestado = estudiante; //estudiante ahora es el estudiante que le has pasado desde el main al metodo prestar
             estudiante.setLibro(this); //el atributo libro de estudiante ahora es this (el objeto en el que estamos)
 
-        }else {
+        } else if (estudiante.getLibro() != null) {
+            System.out.println("El estudiante "+ estudiante.getNombre() + " ya tiene un libro prestado.");
+
+    }else {
             System.out.println("El libro " + titulo+" no está disponible");
         }
 
@@ -104,6 +108,14 @@ public class Libro {
         return estudiantePrestado;
     }
 
+    public Editorial getEditorial() {
+        return editorial;
+    }
+
+    public void setEditorial(Editorial editorial) {
+        this.editorial = editorial;
+    }
+
     @Override
     public String toString() {
         return "Libro{" +
@@ -111,7 +123,8 @@ public class Libro {
                 ", autor='" + autor + '\'' +
                 ", id='" + id + '\'' +
                 ", disponible=" + disponible +
-                ",estudiante=" + estudiantePrestado+
+                ", estudiante=" + estudiantePrestado+
+                ", editorial= " + editorial+
                 '}';
     }
 }

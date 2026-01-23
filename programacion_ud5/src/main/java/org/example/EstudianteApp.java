@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Biblioteca.Estudiante;
+
 public class EstudianteApp {
     static void main() {
 
