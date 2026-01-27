@@ -30,14 +30,18 @@ public class Libro {
        return CADENA_ID + cantidadLibros;
     }
 
-    public void prestar(Estudiante estudiante){
+    public Prestamo prestar(Estudiante estudiante){
+
+        Prestamo prestamo = null;
+
         if (disponible && estudiante.getLibro() == null) {
             disponible = false;
             System.out.println("El libro " + titulo + " ha sido prestado con éxito a " + estudiante.getNombre());
             librosDisponibles--;
             estudiantePrestado = estudiante; //estudiante ahora es el estudiante que le has pasado desde el main al metodo prestar
             estudiante.setLibro(this); //el atributo libro de estudiante ahora es this (el objeto en el que estamos)
-
+            prestamo = new Prestamo(this,estudiante);
+            System.out.println("Prestamo realizado");
         } else if (estudiante.getLibro() != null) {
             System.out.println("El estudiante "+ estudiante.getNombre() + " ya tiene un libro prestado.");
 
@@ -45,6 +49,7 @@ public class Libro {
             System.out.println("El libro " + titulo+" no está disponible");
         }
 
+        return prestamo;
     }
 
     public void devolver(){

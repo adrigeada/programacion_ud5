@@ -7,14 +7,17 @@ public class BiblioApp {
         Libro yo_robot = new Libro("Yo robot" ,"Asimov", millenium);
 
         System.out.println(yo_robot);
-        yo_robot.prestar(adri);
-        System.out.println(yo_robot.getEstudiantePrestado());
-        System.out.println(adri);
-        System.out.println(yo_robot);
-        yo_robot.devolver();
-        System.out.println(yo_robot);
 
+        Prestamo p1 = yo_robot.prestar(adri);
 
+        System.out.println(p1);
+        System.out.println(p1.getFecha());
+
+//        System.out.println(yo_robot.getEstudiantePrestado());
+//        System.out.println(adri);
+//        System.out.println(yo_robot);
+//        yo_robot.devolver();
+//        System.out.println(yo_robot);
 
 
 
