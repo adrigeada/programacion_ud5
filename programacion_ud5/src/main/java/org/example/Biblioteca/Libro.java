@@ -22,7 +22,8 @@ public class Libro {
         cantidadLibros++;
         librosDisponibles++;
         id=calcularID();
-        estudiantePrestado = null; //empieza nulo, lo pide en el ejercicio. Cuando se le presta un libro a un estudiante, estudiante prestado pasa a ser el estudiante que le han pasado al metodo prestar
+        estudiantePrestado = null;
+        this.editorial = editorial;                            //empieza nulo, lo pide en el ejercicio. Cuando se le presta un libro a un estudiante, estudiante prestado pasa a ser el estudiante que le han pasado al metodo prestar
         editorial.insertarLibro(this); //cada vez que se construye un libro, al que se le da una editorial, este se añade a la lista de libros de la editorial
     }
 

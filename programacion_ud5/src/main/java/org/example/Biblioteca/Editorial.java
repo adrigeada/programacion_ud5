@@ -56,7 +56,7 @@ public class Editorial {
         return "Editorial{" +
                 "nombre='" + nombre + '\'' +
                 ", pais='" + pais + '\'' +
-                ", librosEditorial=" + librosEditorial +
+                //", librosEditorial=" + librosEditorial +
                 '}';
     }
 }

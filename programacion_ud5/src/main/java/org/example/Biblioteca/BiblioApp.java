@@ -11,6 +11,7 @@ public class BiblioApp {
         Prestamo p1 = yo_robot.prestar(adri);
 
          System.out.println(millenium.getLibrosEditorial());
+        System.out.println(millenium);
 
 //         System.out.println(adri.getListaLibros());
 //
