@@ -9,14 +9,15 @@ public class BiblioApp {
         System.out.println(yo_robot);
 
         Prestamo p1 = yo_robot.prestar(adri);
+        System.out.println(p1);
 
          System.out.println(millenium.getLibrosEditorial());
         System.out.println(millenium);
 
 //         System.out.println(adri.getListaLibros());
 //
-//        System.out.println(p1);
-//        System.out.println(p1.getFecha());
+        System.out.println(p1);
+        System.out.println(p1.getFecha());
 //
 //        System.out.println(yo_robot.getEstudiantePrestado());
 //        System.out.println(adri);
