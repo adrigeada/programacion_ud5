@@ -10,9 +10,13 @@ public class BiblioApp {
 
         Prestamo p1 = yo_robot.prestar(adri);
 
-        System.out.println(p1);
-        System.out.println(p1.getFecha());
+         System.out.println(millenium.getLibrosEditorial());
 
+//         System.out.println(adri.getListaLibros());
+//
+//        System.out.println(p1);
+//        System.out.println(p1.getFecha());
+//
 //        System.out.println(yo_robot.getEstudiantePrestado());
 //        System.out.println(adri);
 //        System.out.println(yo_robot);
@@ -24,6 +28,8 @@ public class BiblioApp {
 
         System.out.println("Total de libros creados: "+Libro.getTotalLibros());
         System.out.println("Total de libros disponibles: "+Libro.getLibrosDisponibles());
+
+
     }
 
 }

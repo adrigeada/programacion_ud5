@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class AutobusImserso {
 
-    static private ArrayList<Abuelo> listaAbuelos = new ArrayList<>();
-
+    private ArrayList<Abuelo> listaAbuelos;
     private String matricula;
     private String destino;
 
@@ -13,22 +12,47 @@ public class AutobusImserso {
     public AutobusImserso(String matricula, String destino){
         this.matricula = matricula;
         this.destino = destino;
+        listaAbuelos = new ArrayList<>(); //Inicializar lista en el constructor
 
     }
 
     public void insertarAbuelo(Abuelo abuelo){
-
         listaAbuelos.add(abuelo);
+    }
+
+    public void borrarAbuelo(Abuelo abuelo){
+        listaAbuelos.remove(abuelo);
+    }
+
+    public void mostrarAbuelo(){
+
+        System.out.println("Abuelos del autobus con matricula"+ matricula+ ": " );
+
+        for (Abuelo abuelo : listaAbuelos){
+            System.out.println("- "+ abuelo.getNombre()+ " de " + abuelo.getEdad()+ " años");
+        }
 
     }
 
+    public void mostrarMayores(int edad){
 
-    public static ArrayList<Abuelo> getListaAbuelos() {
+        System.out.println("Abuelos mayores a " + edad+ " años: ");
+
+        for (Abuelo abuelo : listaAbuelos){
+            if (abuelo.getEdad() >= edad){
+                System.out.println("- "+ abuelo.getNombre()+ " de " + abuelo.getEdad()+ " años");
+            }
+
+        }
+
+    }
+
+    public ArrayList<Abuelo> getListaAbuelos() {
         return listaAbuelos;
     }
 
-    public static void setListaAbuelos(ArrayList<Abuelo> listaAbuelos) {
-        AutobusImserso.listaAbuelos = listaAbuelos;
+    public void setListaAbuelos(ArrayList<Abuelo> listaAbuelos) {
+        this.listaAbuelos = listaAbuelos;
     }
 
     public String getDestino() {
@@ -50,7 +74,8 @@ public class AutobusImserso {
     @Override
     public String toString() {
         return "AutobusImserso{" +
-                "matricula='" + matricula + '\'' +
+                "listaAbuelos=" + listaAbuelos +
+                ", matricula='" + matricula + '\'' +
                 ", destino='" + destino + '\'' +
                 '}';
     }

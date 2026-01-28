@@ -23,7 +23,7 @@ public class Libro {
         librosDisponibles++;
         id=calcularID();
         estudiantePrestado = null; //empieza nulo, lo pide en el ejercicio. Cuando se le presta un libro a un estudiante, estudiante prestado pasa a ser el estudiante que le han pasado al metodo prestar
-        this.editorial = editorial;
+        editorial.insertarLibro(this); //cada vez que se construye un libro, al que se le da una editorial, este se añade a la lista de libros de la editorial
     }
 
     private static String calcularID(){
@@ -34,16 +34,16 @@ public class Libro {
 
         Prestamo prestamo = null;
 
-        if (disponible && estudiante.getLibro() == null) {
+        if (disponible && !estudiante.getListaLibros().contains(this)) {
             disponible = false;
             System.out.println("El libro " + titulo + " ha sido prestado con éxito a " + estudiante.getNombre());
             librosDisponibles--;
             estudiantePrestado = estudiante; //estudiante ahora es el estudiante que le has pasado desde el main al metodo prestar
-            estudiante.setLibro(this); //el atributo libro de estudiante ahora es this (el objeto en el que estamos)
+            estudiante.insertarLibro(this); //el atributo libro de estudiante ahora es this (el objeto en el que estamos)
             prestamo = new Prestamo(this,estudiante);
             System.out.println("Prestamo realizado");
-        } else if (estudiante.getLibro() != null) {
-            System.out.println("El estudiante "+ estudiante.getNombre() + " ya tiene un libro prestado.");
+        } else if (estudiante.getListaLibros().contains(this)) {
+            System.out.println("El estudiante "+ estudiante.getNombre() + " ya tiene el libro "+  titulo +" prestado.");
 
     }else {
             System.out.println("El libro " + titulo+" no está disponible");
@@ -57,7 +57,7 @@ public class Libro {
             disponible = true;
             librosDisponibles++;
             System.out.println("El libro ha sido devuelto con éxito por "+estudiantePrestado.getNombre());
-            estudiantePrestado.setLibro(null);
+            estudiantePrestado.borrarLibro(this);
             estudiantePrestado = null;
         }else {
             System.out.println("El libro no estaba prestado.");
