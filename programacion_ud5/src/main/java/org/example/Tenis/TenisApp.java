@@ -17,6 +17,8 @@ public class TenisApp {
         pachanga.insertarSet(0,6);
 
 
+        System.out.println(pachanga.getListaSets());
+
 
 
 
