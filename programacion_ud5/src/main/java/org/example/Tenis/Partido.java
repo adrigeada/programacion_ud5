@@ -16,9 +16,37 @@ public class Partido {
         jugador2.asignarRival(jugador1);
     }
 
+    public boolean validarPuntosSet(int puntosJ1,int puntosJ2){
+
+        if (puntosJ1 < 0){
+            System.out.println("Los puntos tienen que ser mayor a 0");
+            return false;
+        } else if (puntosJ1 > 7) {
+            System.out.println("Los puntos no pueden ser mayor de 7");
+            return false;
+        } else if (puntosJ1 == 6 && puntosJ2 > 5) {
+            System.out.println("Tiene que haber tie-break");
+            return false;
+        } else if (puntosJ1 == 7 && puntosJ2 != 6) {
+            System.out.println("Faltan puntos del tie-break");
+            return false;
+        } else if (puntosJ1 <6 && puntosJ2 < 6) {
+            System.out.println("No ha acabado el set");
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
     public void insertarSet(int puntosJ1, int puntosJ2){
-        Set set = new Set(puntosJ1,puntosJ2);
-        listaSets.add(set);
+
+        if (validarPuntosSet(puntosJ1,puntosJ2) && validarPuntosSet(puntosJ2,puntosJ1)){
+            System.out.println("Puntos añadidos");
+            Set set = new Set(puntosJ1,puntosJ2);
+            listaSets.add(set);
+        }
+
     }
 
     public Jugador getJugador1() {
