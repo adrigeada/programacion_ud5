@@ -1,4 +1,4 @@
 package org.example.Practica;
 
-public class hola {
+public class Invitado {
 }
