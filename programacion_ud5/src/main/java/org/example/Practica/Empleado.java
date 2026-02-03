@@ -1,6 +1,9 @@
 package org.example.Practica;
 
 public class Empleado {
+    private static final String PRE_ID = "EP";
+    private static final String CARGO_DIRECTOR = "director";
+
     private static int contadorID = 0;
 
     private String id;
@@ -14,7 +17,18 @@ public class Empleado {
         id = setId();
         this.nombre = nombre;
         this.cargo = setCargo(cargo);
-        this.director = director;
+        asignarDirector(director);
+    }
+
+
+    public void asignarDirector(Empleado director){
+
+        if (cargo.equals(CARGO_DIRECTOR)){
+            this.director = null;
+        }else {
+            this.director = director;
+        }
+
     }
 
     public String getId() {
@@ -22,7 +36,7 @@ public class Empleado {
     }
 
     public String setId() {
-       return "EP"+contadorID;
+       return PRE_ID+contadorID;
     }
 
     public String getNombre() {

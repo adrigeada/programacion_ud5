@@ -11,8 +11,15 @@ public class Cadena {
         listaProgramas = new ArrayList<>();
     }
 
+    public void anyadirPrograma(Programa programa){
+        listaProgramas.add(programa);
+    }
 
-
+    public void mostrarListaProgramas (){
+        for (Programa programa : listaProgramas){
+            System.out.println("- "+programa);
+        }
+    }
 
     public String getNombre() {
         return nombre;
@@ -34,6 +41,7 @@ public class Cadena {
     public String toString() {
         return "Cadena{" +
                 "nombre='" + nombre + '\'' +
+                "Lista Programas" + listaProgramas+
                 '}';
     }
 }

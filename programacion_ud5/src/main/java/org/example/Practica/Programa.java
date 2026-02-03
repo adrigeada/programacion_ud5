@@ -3,6 +3,8 @@ package org.example.Practica;
 import java.util.ArrayList;
 
 public class Programa {
+    private static final String CARGO_DIRECTOR = "director";
+
     private String nombre;
     private Cadena cadena;
     private int temporadas;
@@ -10,21 +12,31 @@ public class Programa {
     private ArrayList<Invitado> listaInvitados;
     private Empleado director;
 
-    public Programa(String nombre,Cadena cadena,Empleado director){
+    public Programa(String nombre,Cadena cadena,String nombre_director){
         this.nombre = nombre;
         this.cadena = cadena;
         this.temporadas = 0;
         listaEmpleados = new ArrayList<>();
         listaInvitados = new ArrayList<>();
-        anyadirEmpleado(director);
+        anyadirEmpleado(nombre_director,CARGO_DIRECTOR,null);
+        cadena.anyadirPrograma(this);
     }
 
 
     //------------------------------------------------
 
-    public void anyadirEmpleado(Empleado empleado){
+    public void anyadirEmpleado(String nombre, String cargo,Empleado director){
+        Empleado empleado = new Empleado(nombre,cargo,getDirector());
+        if (cargo.equals("director")){
+            this.director = empleado;
+        }else {
+            this.director = director;
+        }
+
         listaEmpleados.add(empleado);
     }
+
+
 
 
     public String getNombre() {
@@ -82,9 +94,10 @@ public class Programa {
     public String toString() {
         return "Programa{" +
                 "nombre='" + nombre + '\'' +
-                ", cadena=" + cadena +
+                ", cadena=" + cadena.getNombre() +
                 ", temporadas=" + temporadas +
                 ", director=" + director +
+                ", Lista empleados= " + listaEmpleados +
                 '}';
     }
 }
