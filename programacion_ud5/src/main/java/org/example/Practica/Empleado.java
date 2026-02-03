@@ -64,7 +64,6 @@ public class Empleado {
     }
 
     public void setDirector(Empleado director) {
-        //añadir director aqui, empleado en la funcion
         this.director = director;
     }
 

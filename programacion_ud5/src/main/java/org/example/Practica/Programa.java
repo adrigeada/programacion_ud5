@@ -18,7 +18,7 @@ public class Programa {
         this.temporadas = 0;
         listaEmpleados = new ArrayList<>();
         listaInvitados = new ArrayList<>();
-        anyadirEmpleado(nombre_director,CARGO_DIRECTOR,null);
+        setDirector(nombre_director);
         cadena.anyadirPrograma(this);
     }
 
@@ -27,17 +27,16 @@ public class Programa {
 
     public void anyadirEmpleado(String nombre, String cargo,Empleado director){
         Empleado empleado = new Empleado(nombre,cargo,getDirector());
-        if (cargo.equals("director")){
-            this.director = empleado;
+        if (cargo.equals(CARGO_DIRECTOR)){
+            System.out.println("El programa ya tiene director.");
+            return;
         }else {
             this.director = director;
         }
 
         listaEmpleados.add(empleado);
     }
-
-
-
+    
 
     public String getNombre() {
         return nombre;
@@ -83,8 +82,10 @@ public class Programa {
         return director;
     }
 
-    public void setDirector(Empleado director) {
+    public void setDirector(String nombre) {
+        Empleado director = new Empleado(nombre,CARGO_DIRECTOR,null);
         this.director = director;
+        listaEmpleados.add(director);
     }
 
     // -------------------------------------------------------------

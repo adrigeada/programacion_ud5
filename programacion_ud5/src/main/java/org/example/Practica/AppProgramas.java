@@ -9,7 +9,7 @@ public class AppProgramas {
         System.out.println(hormiguero);
         System.out.println(antena3);
 
-        hormiguero.anyadirEmpleado("Pablito","presentador",hormiguero.getDirector());
+        hormiguero.anyadirEmpleado("Pablito","presentador",null);
         System.out.println(hormiguero);
 
 
