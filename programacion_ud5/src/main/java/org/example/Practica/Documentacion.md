@@ -16,12 +16,128 @@
 ### 2. Estructura de clases
 
 #### Diagrama de clases UML
-![]()
+![](img/biblioteca.png)
 
 #### Código de PlantUML
+
+````
+@startuml
+
+package "org.example.Biblioteca" {
+
+    class Editorial {
+        - nombre : String
+        - pais : String
+        - librosEditorial : ArrayList<Libro>
+
+        + Editorial(nombre : String, pais : String)
+        + Editorial()
+        + insertarLibro(libro : Libro) : void
+        + borrarLibro(libro : Libro) : void
+        + getLibrosEditorial() : ArrayList<Libro>
+        + setLibrosEditorial(librosEditorial : ArrayList<Libro>) : void
+        + getNombre() : String
+        + setNombre(nombre : String) : void
+        + getPais() : String
+        + setPais(pais : String) : void
+        + toString() : String
+    }
+
+    class Estudiante {
+        - CORREO_FORMAT : String
+        - contadorEstudiantes : int
+        - nombre : String
+        - curso : String
+        - nia : int
+        - email : String
+        - listaLibros : ArrayList<Libro>
+
+        + Estudiante(nombre : String, curso : String, email : String)
+        + Estudiante(nombre : String)
+        + obtenerTotalEstudiantes() : int
+        + validarCorreo(correo : String) : boolean
+        + insertarLibro(libro : Libro) : void
+        + borrarLibro(libro : Libro) : void
+        + getNombre() : String
+        + setNombre(nombre : String) : void
+        + getCurso() : String
+        + setCurso(curso : String) : void
+        + getNia() : int
+        - setNia() : void
+        + getEmail() : String
+        + setEmail(email : String) : void
+        + getListaLibros() : ArrayList<Libro>
+        + toString() : String
+    }
+
+    class Libro {
+        - cantidadLibros : int
+        - librosDisponibles : int
+        - CADENA_ID : String
+        - titulo : String
+        - autor : String
+        - id : String
+        - disponible : boolean
+        - estudiantePrestado : Estudiante
+        - editorial : Editorial
+
+        + Libro(titulo : String, autor : String, editorial : Editorial)
+        - calcularID() : String
+        + prestar(estudiante : Estudiante) : Prestamo
+        + devolver() : void
+        + estaDisponible() : boolean
+        + getTotalLibros() : int
+        + getLibrosDisponibles() : int
+        + getTitulo() : String
+        + setTitulo(titulo : String) : void
+        + getAutor() : String
+        + setAutor(autor : String) : void
+        + getId() : String
+        + isDisponible() : boolean
+        + setDisponible(disponible : boolean) : void
+        + getEstudiantePrestado() : Estudiante
+        + getEditorial() : Editorial
+        + setEditorial(editorial : Editorial) : void
+        + toString() : String
+    }
+
+    class Prestamo {
+        - libro : Libro
+        - estudiante : Estudiante
+        - fecha : LocalDateTime
+
+        + Prestamo(libro : Libro, estudiante : Estudiante)
+        + getLibro() : Libro
+        + setLibro(libro : Libro) : void
+        + getFecha() : LocalDateTime
+        + setFecha(fecha : LocalDateTime) : void
+        + getEstudiante() : Estudiante
+        + setEstudiante(estudiante : Estudiante) : void
+        + toString() : String
+    }
+
+    ' Relaciones
+    Estudiante "1" -- "*" Libro : presta >
+    Libro "*" -- "1" Editorial : pertenece a >
+    Prestamo "1" o--> "1" Libro
+    Prestamo "1" o--> "1" Estudiante
+
+@enduml
+
+````
+
+#### Contenido de las clases (.java)
+- Clase Casa.java
+````
+codigo
+````
+[Link a la clase en github]()
 
 ### 3. Programa principal (app)
 
 ### 4. Pruebas
 
 ### 5. Entrega
+
+- [X] Código fuente en GitHub
+- [ ] Documentación
