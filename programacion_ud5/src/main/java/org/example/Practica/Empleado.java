@@ -3,6 +3,7 @@ package org.example.Practica;
 public class Empleado {
     private static final String PRE_ID = "EP";
     private static final String CARGO_DIRECTOR = "director";
+    private static final String[] POSIBLES_CARGOS = new String[] {"director", "tecnico", "presentador", "colaborador"};
 
     private static int contadorID = 0;
 
@@ -52,6 +53,8 @@ public class Empleado {
     }
 
     public String setCargo(String cargo) {
+
+      
         if (cargo.equals("director") || cargo.equals("tecnico") || cargo.equals("presentador") || cargo.equals("colaborador")){
             return cargo;
         }else {

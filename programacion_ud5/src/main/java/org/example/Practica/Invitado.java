@@ -13,6 +13,7 @@ public class Invitado {
         this.nombre = nombre;
         this.profesion = profesion;
         fechaVisita = LocalDate.now();
+        this.temporada = temporada;
     }
 
     public String getNombre() {
