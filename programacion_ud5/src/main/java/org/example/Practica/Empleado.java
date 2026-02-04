@@ -1,5 +1,7 @@
 package org.example.Practica;
 
+import java.util.Arrays;
+
 public class Empleado {
     private static final String PRE_ID = "EP";
     private static final String CARGO_DIRECTOR = "director";
@@ -54,12 +56,13 @@ public class Empleado {
 
     public String setCargo(String cargo) {
 
-      
-        if (cargo.equals("director") || cargo.equals("tecnico") || cargo.equals("presentador") || cargo.equals("colaborador")){
+        if (Arrays.asList(POSIBLES_CARGOS).contains(cargo)){
             return cargo;
         }else {
+            System.out.println("No existe el cargo " + cargo);
             return "pte";
         }
+
     }
 
     public Empleado getDirector() {
