@@ -36,7 +36,7 @@ public class Programa {
 
         listaEmpleados.add(empleado);
     }
-    
+
 
     public String getNombre() {
         return nombre;
