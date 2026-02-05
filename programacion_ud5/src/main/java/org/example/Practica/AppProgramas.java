@@ -9,7 +9,6 @@ public class AppProgramas {
         System.out.println(antena3);
         Programa hormiguero = new Programa("Hormiguero",antena3,"Director1");
         Programa revuelta = new Programa("Revuelta",antena3,"Ricardo");
-        System.out.println(hormiguero);
         System.out.println(antena3);
 
         hormiguero.anyadirEmpleado("Pablito","presentador");
@@ -24,8 +23,7 @@ public class AppProgramas {
 
        hormiguero.invitadosTemporada(1);
        hormiguero.rastrearInvitado("Aitana");
-       System.out.println(hormiguero.buscarInvitado("Broncano"));
-       hormiguero.buscarInvitado("Patri");
+
 
        if (hormiguero.buscarInvitado("Aitana") && revuelta.buscarInvitado("Aitana")){
            invitadoAntes("Aitana",hormiguero,revuelta);
