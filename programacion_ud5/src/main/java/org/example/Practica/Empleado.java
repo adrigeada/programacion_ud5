@@ -56,8 +56,12 @@ public class Empleado {
 
     public String setCargo(String cargo) {
 
+<<<<<<< HEAD
 
 
+=======
+      
+>>>>>>> parent of 68ace0d (.)
         if (cargo.equals("director") || cargo.equals("tecnico") || cargo.equals("presentador") || cargo.equals("colaborador")){
 
         if (Arrays.asList(POSIBLES_CARGOS).contains(cargo)){
