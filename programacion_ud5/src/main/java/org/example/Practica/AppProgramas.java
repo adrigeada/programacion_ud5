@@ -12,9 +12,9 @@ public class AppProgramas {
         System.out.println(hormiguero);
         System.out.println(antena3);
 
-        hormiguero.anyadirEmpleado("Pablito","presentador",null);
-        hormiguero.anyadirEmpleado("Paco","director",null);
-        hormiguero.anyadirEmpleado("Vicen","programador",null);
+        hormiguero.anyadirEmpleado("Pablito","presentador");
+        hormiguero.anyadirEmpleado("Paco","director");
+        hormiguero.anyadirEmpleado("Vicen","programador");
         System.out.println(hormiguero);
 
        hormiguero.anyadirInvitado("Aitana","Cantante",1);

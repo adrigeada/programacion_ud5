@@ -28,13 +28,11 @@ public class Programa {
     /*
     Este método crea empleados dentro de un programa. Si el cargo de este es director, no lo deja crear, porque el director se crea en Programa. Luego se añaden a la lista de empleados.
      */
-    public void anyadirEmpleado(String nombre, String cargo,Empleado director){
+    public void anyadirEmpleado(String nombre, String cargo){
         Empleado empleado = new Empleado(nombre,cargo,getDirector());
         if (cargo.equals(CARGO_DIRECTOR)){
             System.out.println("El programa ya tiene director.");
             return;
-        }else {
-            this.director = director;
         }
 
         listaEmpleados.add(empleado);
