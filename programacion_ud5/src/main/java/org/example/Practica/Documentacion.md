@@ -599,6 +599,7 @@ public class AppProgramas {
 Cadena{nombre='Antena 3'Lista Programas[]}
 Cadena{nombre='Antena 3'Lista Programas[Programa{nombre='Hormiguero', cadena=Antena 3, temporadas=0, director=Empleado{id='EP1', nombre='Director1', cargo='director', director=null}, Lista empleados= [Empleado{id='EP1', nombre='Director1', cargo='director', director=null}]}, Programa{nombre='Revuelta', cadena=Antena 3, temporadas=0, director=Empleado{id='EP2', nombre='Ricardo', cargo='director', director=null}, Lista empleados= [Empleado{id='EP2', nombre='Ricardo', cargo='director', director=null}]}]}
 ````
+<br>
 
 > Luego he añadido 3 empleados al programa Hormiguero. Un presentador que se añade sin problema. Un director que no se añade ya que ya hay un director existente. Y un programador que se añade pero se le cambia el cargo al cargo por defecto pte, ya que el cargo programador no entra dentro de los parametros permitidos. Luego he impreso el programa hormiguero. Este es el resultado:
 ````
@@ -606,11 +607,12 @@ El programa ya tiene director.
 El cargo 'programador' no es posible. Cargo por defecto usado.
 Programa{nombre='Hormiguero', cadena=Antena 3, temporadas=0, director=Empleado{id='EP1', nombre='Director1', cargo='director', director=null}, Lista empleados= [Empleado{id='EP1', nombre='Director1', cargo='director', director=null}, Empleado{id='EP3', nombre='Pablito', cargo='presentador', director=Empleado{id='EP1', nombre='Director1', cargo='director', director=null}}, Empleado{id='EP5', nombre='Vicen', cargo='pte', director=Empleado{id='EP1', nombre='Director1', cargo='director', director=null}}]}
 ````
+<br>
 
-> En el siguiente paso añado los invitados. Ya que el setFechaVisita de Invitado te pide el año, mes y día en el que el invitado hizo la visita, eso es lo que vemos por pantalla:
-![](img/captura_mes.png)
-> Después uso el método para ver cuantos invitados han ido a la temporada 1. El método para ver qué días ha ido Aitana al hormiguero. Y el método para ver a que programa fue Aitana primero entre El Hormiguero y la Revuelta. Este es el resultado de esos tres métodos:
-![](img/captura_metodos.png)
+> En el siguiente paso añado los invitados. Ya que el setFechaVisita de Invitado te pide el año, mes y día en el que el invitado hizo la visita, eso es lo que vemos por pantalla: <br>
+![](img/captura_mes.png) <br><br>
+> Después uso el método para ver cuantos invitados han ido a la temporada 1. El método para ver qué días ha ido Aitana al hormiguero. Y el método para ver a que programa fue Aitana primero entre El Hormiguero y la Revuelta. Este es el resultado de esos tres métodos:<br>
+![](img/captura_metodos.png)<br><br>
 > Finalmente imprimo la lista de invitados que han ido al hormiguero. Este es el resultado:
 ````
 [Invitado{nombre='Aitana', profesion='Cantante', fechaVisita=2025-12-01, temporada=1}, Invitado{nombre='Aitana', profesion='Comico', fechaVisita=2024-01-02, temporada=2}, Invitado{nombre='Broncano', profesion='payaso', fechaVisita=2026-02-01, temporada=1}]
