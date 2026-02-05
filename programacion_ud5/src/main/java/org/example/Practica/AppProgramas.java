@@ -28,16 +28,14 @@ public class AppProgramas {
        hormiguero.buscarInvitado("Patri");
 
        if (hormiguero.buscarInvitado("Aitana") && revuelta.buscarInvitado("Aitana")){
-           hormiguero.invAntes("Aitana",hormiguero,revuelta);
+           invitadoAntes("Aitana",hormiguero,revuelta);
        }
-
-
 
         System.out.println(hormiguero.getListaInvitados());
 
     }
 
-    public void blabla (String nombre,Programa programa1, Programa programa2){
+    public static void invitadoAntes (String nombre,Programa programa1, Programa programa2){
 
         LocalDate fecha1 = null;
         LocalDate fecha2 = null;
