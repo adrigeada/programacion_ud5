@@ -97,31 +97,31 @@ public class Programa {
         return false;
     }
 
-//    public void invitadoAntes(String nombre){
-//        if (buscarInvitado(nombre)){
-//            LocalDate fecha1 = null;
-//            LocalDate fecha2 = null;
-//            ArrayList<LocalDate> listaFechas = new ArrayList<>();
-//
-//            for (Invitado invitado : listaInvitados){
-//                if (invitado.getNombre().equals(nombre)){
-//                    listaFechas.add(invitado.getFechaVisita());
-//                }
-//            }
-//
-//            fecha1 = listaFechas.get(0);
-//            fecha2 = listaFechas.get(1);
-//
-//            if (fecha1.isBefore(fecha2)){
-//                System.out.println("El dia "+fecha1+" fue antes");
-//            }else {
-//                System.out.println("El dia "+fecha2+ " fue antes");
-//            }
-//
-//
-//        }
-//
-//    }
+    public void invitadoAntes(String nombre){
+        if (buscarInvitado(nombre)){
+            LocalDate fecha1 = null;
+            LocalDate fecha2 = null;
+            ArrayList<LocalDate> listaFechas = new ArrayList<>();
+
+            for (Invitado invitado : listaInvitados){
+                if (invitado.getNombre().equals(nombre)){
+                    listaFechas.add(invitado.getFechaVisita());
+                }
+            }
+
+            fecha1 = listaFechas.get(0);
+            fecha2 = listaFechas.get(1);
+
+            if (fecha1.isBefore(fecha2)){
+                System.out.println("El dia "+fecha1+" fue antes");
+            }else {
+                System.out.println("El dia "+fecha2+ " fue antes");
+            }
+
+
+        }
+
+    }
 
     public void invAntes(String nombre,Programa programa1,Programa programa2){
         if (buscarInvitado(nombre)){
