@@ -124,7 +124,7 @@ public class Programa {
 //    }
 
     public void invAntes(String nombre,Programa programa1,Programa programa2){
-
+        if (buscarInvitado(nombre)){
             LocalDate fecha1 = null;
             LocalDate fecha2 = null;
             for (Invitado invitado : programa1.listaInvitados){
@@ -145,6 +145,7 @@ public class Programa {
                 System.out.println(nombre+ " estuvo antes en el programa " + programa2.getNombre()+ " el dia "+fecha2 );
             }
 
+        }
     }
 
     //--------------------------------------------------------------------------

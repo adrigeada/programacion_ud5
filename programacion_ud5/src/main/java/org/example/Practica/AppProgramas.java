@@ -1,7 +1,5 @@
 package org.example.Practica;
 
-import java.time.LocalDate;
-
 public class AppProgramas {
     static void main() {
 
@@ -27,38 +25,10 @@ public class AppProgramas {
        System.out.println(hormiguero.buscarInvitado("Broncano"));
        hormiguero.buscarInvitado("Adrian");
 
-       if (hormiguero.buscarInvitado("Aitana") && revuelta.buscarInvitado("Aitana")){
-           hormiguero.invAntes("Aitana",hormiguero,revuelta);
-       }
-
-
+       hormiguero.invAntes("Aitana",hormiguero,revuelta);
 
         System.out.println(hormiguero.getListaInvitados());
 
-    }
-
-    public void blabla (String nombre,Programa programa1, Programa programa2){
-
-        LocalDate fecha1 = null;
-        LocalDate fecha2 = null;
-
-        for (Invitado invitado : programa1.getListaInvitados()){
-            if (invitado.getNombre().equals(nombre)){
-                fecha1 = invitado.getFechaVisita();
-            }
-        }
-
-        for (Invitado invitado : programa2.getListaInvitados()){
-            if (invitado.getNombre().equals(nombre)){
-                fecha2 = invitado.getFechaVisita();
-            }
-        }
-
-        if (fecha1.isBefore(fecha2)){
-            System.out.println(nombre+" fue al programa "+programa1.getNombre()+" primero.");
-        }else {
-            System.out.println(nombre+" fue al programa "+programa2.getNombre()+ " primero.");
-        }
 
     }
 }
