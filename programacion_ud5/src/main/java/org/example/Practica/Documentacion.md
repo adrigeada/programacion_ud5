@@ -11,12 +11,20 @@
 5. [Entrega](#5-entrega)
 
 ### 1. Intro
-> La práctica consiste en una app ... 
+> La práctica consiste en una app para crear cadenas de televisión, programas, empleados de los programas y los invitados que irán a estos programas.
+> Un programa pertenece a una cadena y una cadena puede tener muchos programas. Los programas tienen empleados e invitados. De los empleados, uno es el director del programa.<br>
+> Esta app aplica unos métodos:
+> - Para poder elegir la fecha en la que un invitado acudirá al programa.
+> - Para ver cuantos invitados han acudido en una temporada dada, de un programa.
+> - Cuantas veces ha ido un invitado a una temporada, dado el nombre del invitado.
+> - Mostrar que días ha ido el invitado al programa.
+> - Saber si un invitado ha estado en un programa.
+> - Dado el nombre del invitado y dos programas, saber a que programa fue antes. 
 
 ### 2. Estructura de clases
 
 #### Diagrama de clases UML
-![](img/biblioteca.png)
+![](img/Practica.png)
 
 #### Código de PlantUML
 
