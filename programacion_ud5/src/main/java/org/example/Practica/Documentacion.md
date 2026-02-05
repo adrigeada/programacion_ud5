@@ -31,117 +31,103 @@
 ````
 @startuml
 
-package "org.example.Biblioteca" {
+package "org.example.Practica" {
 
-    class Editorial {
-        - nombre : String
-        - pais : String
-        - librosEditorial : ArrayList<Libro>
+class Cadena {
+    - nombre : String
+    - listaProgramas : ArrayList<Programa>
+    --
+    + Cadena(nombre : String)
+    + anyadirPrograma(programa : Programa) : void
+    + mostrarListaProgramas() : void
+}
 
-        + Editorial(nombre : String, pais : String)
-        + Editorial()
-        + insertarLibro(libro : Libro) : void
-        + borrarLibro(libro : Libro) : void
-        + getLibrosEditorial() : ArrayList<Libro>
-        + setLibrosEditorial(librosEditorial : ArrayList<Libro>) : void
-        + getNombre() : String
-        + setNombre(nombre : String) : void
-        + getPais() : String
-        + setPais(pais : String) : void
-        + toString() : String
-    }
+class Programa {
+    - nombre : String
+    - cadena : Cadena
+    - temporadas : int
+    - listaEmpleados : ArrayList<Empleado>
+    - listaInvitados : ArrayList<Invitado>
+    - director : Empleado
+    --
+    + Programa(nombre : String, cadena : Cadena, nombre_director : String)
+    + anyadirEmpleado(nombre : String, cargo : String, director : Empleado) : void
+    + borrarEmpleado(empleado : Empleado) : void
+    + anyadirInvitado(nombre : String, profesion : String, temporada : int) : void
+    + borrarInvitado(invitado : Invitado) : void
+    + invitadosTemporada(temporada : int) : void
+    + vecesInvitado(nombre : String) : int
+    + rastrearInvitado(nombre : String) : void
+    + buscarInvitado(nombre : String) : boolean
+}
 
-    class Estudiante {
-        - CORREO_FORMAT : String
-        - contadorEstudiantes : int
-        - nombre : String
-        - curso : String
-        - nia : int
-        - email : String
-        - listaLibros : ArrayList<Libro>
+class Empleado {
+    - id : String
+    - nombre : String
+    - cargo : String
+    - director : Empleado
+    --
+    + Empleado(nombre : String, cargo : String, director : Empleado)
+    + asignarDirector(director : Empleado) : void
+    + getCargo() : String
+    + setCargo(cargo : String) : String
+    + getDirector() : Empleado
+    + setDirector(director : Empleado) : void
+}
 
-        + Estudiante(nombre : String, curso : String, email : String)
-        + Estudiante(nombre : String)
-        + obtenerTotalEstudiantes() : int
-        + validarCorreo(correo : String) : boolean
-        + insertarLibro(libro : Libro) : void
-        + borrarLibro(libro : Libro) : void
-        + getNombre() : String
-        + setNombre(nombre : String) : void
-        + getCurso() : String
-        + setCurso(curso : String) : void
-        + getNia() : int
-        - setNia() : void
-        + getEmail() : String
-        + setEmail(email : String) : void
-        + getListaLibros() : ArrayList<Libro>
-        + toString() : String
-    }
+class Invitado {
+    - nombre : String
+    - profesion : String
+    - fechaVisita : LocalDate
+    - temporada : int
+    --
+    + Invitado(nombre : String, profesion : String, temporada : int)
 
-    class Libro {
-        - cantidadLibros : int
-        - librosDisponibles : int
-        - CADENA_ID : String
-        - titulo : String
-        - autor : String
-        - id : String
-        - disponible : boolean
-        - estudiantePrestado : Estudiante
-        - editorial : Editorial
+}
 
-        + Libro(titulo : String, autor : String, editorial : Editorial)
-        - calcularID() : String
-        + prestar(estudiante : Estudiante) : Prestamo
-        + devolver() : void
-        + estaDisponible() : boolean
-        + getTotalLibros() : int
-        + getLibrosDisponibles() : int
-        + getTitulo() : String
-        + setTitulo(titulo : String) : void
-        + getAutor() : String
-        + setAutor(autor : String) : void
-        + getId() : String
-        + isDisponible() : boolean
-        + setDisponible(disponible : boolean) : void
-        + getEstudiantePrestado() : Estudiante
-        + getEditorial() : Editorial
-        + setEditorial(editorial : Editorial) : void
-        + toString() : String
-    }
+Cadena "1" o-- "0..*" Programa : contiene
+Programa "1" o-- "0..*" Empleado : emplea
+Programa "1" o-- "0..*" Invitado : invita
+Programa "1" --> "1" Empleado : director
+Empleado "0..1" --> "1" Empleado : director
 
-    class Prestamo {
-        - libro : Libro
-        - estudiante : Estudiante
-        - fecha : LocalDateTime
-
-        + Prestamo(libro : Libro, estudiante : Estudiante)
-        + getLibro() : Libro
-        + setLibro(libro : Libro) : void
-        + getFecha() : LocalDateTime
-        + setFecha(fecha : LocalDateTime) : void
-        + getEstudiante() : Estudiante
-        + setEstudiante(estudiante : Estudiante) : void
-        + toString() : String
-    }
-
-    ' Relaciones
-    Estudiante "1" -- "*" Libro : presta >
-    Libro "*" -- "1" Editorial : pertenece a >
-    Prestamo "1" o--> "1" Libro
-    Prestamo "1" o--> "1" Estudiante
+}
 
 @enduml
 
 ````
 
 #### Contenido de las clases (.java)
-- Clase Casa.java
+- Clase Cadena.java
 ````
 codigo
 ````
-[Link a la clase en github]()
+[Link a la clase en github](https://github.com/adrigeada/programacion_ud5/blob/main/programacion_ud5/src/main/java/org/example/Practica/Cadena.java)
+
+- Clase Empleado.java
+````
+codigo
+````
+[Link a la clase en github](https://github.com/adrigeada/programacion_ud5/blob/main/programacion_ud5/src/main/java/org/example/Practica/Empleado.java)
+
+- Clase Invitado.java
+````
+codigo
+````
+[Link a la clase en github](https://github.com/adrigeada/programacion_ud5/blob/main/programacion_ud5/src/main/java/org/example/Practica/Invitado.java)
+
+- Clase Programa.java
+````
+codigo
+````
+[Link a la clase en github](https://github.com/adrigeada/programacion_ud5/blob/main/programacion_ud5/src/main/java/org/example/Practica/Programa.java)
+
 
 ### 3. Programa principal (app)
+````
+codigo
+````
+[Link a la clase en github](https://github.com/adrigeada/programacion_ud5/blob/main/programacion_ud5/src/main/java/org/example/Practica/AppProgramas.java)
 
 ### 4. Pruebas
 
