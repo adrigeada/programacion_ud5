@@ -54,7 +54,7 @@ public class Empleado {
 
     public String setCargo(String cargo) {
 
-      
+
         if (cargo.equals("director") || cargo.equals("tecnico") || cargo.equals("presentador") || cargo.equals("colaborador")){
             return cargo;
         }else {
