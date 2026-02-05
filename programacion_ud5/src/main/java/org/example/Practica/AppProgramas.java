@@ -14,7 +14,7 @@ public class AppProgramas {
 
         hormiguero.anyadirEmpleado("Pablito","presentador",null);
         hormiguero.anyadirEmpleado("Paco","director",null);
-        hormiguero.anyadirEmpleado("Vicen","caca",null);
+        hormiguero.anyadirEmpleado("Vicen","programador",null);
         System.out.println(hormiguero);
 
        hormiguero.anyadirInvitado("Aitana","Cantante",1);
@@ -25,7 +25,7 @@ public class AppProgramas {
        hormiguero.invitadosTemporada(1);
        hormiguero.rastrearInvitado("Aitana");
        System.out.println(hormiguero.buscarInvitado("Broncano"));
-       hormiguero.buscarInvitado("Patri");
+       hormiguero.buscarInvitado("Adrian");
 
        if (hormiguero.buscarInvitado("Aitana") && revuelta.buscarInvitado("Aitana")){
            hormiguero.invAntes("Aitana",hormiguero,revuelta);
