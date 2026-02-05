@@ -2,6 +2,11 @@ package org.example.Practica;
 
 import java.util.Arrays;
 
+/**
+ * PRE_ID es el prefijo que se usa al crear los id de los empleados. Se añade al contadorID. El contador se suma cada vez que se crea un empleado
+ * CARGO_DIRECTOR se usa para controlar si el empleado añadido es director o no
+ * POSIBLES_CARGOS  es un array donde están los cargos aceptados de empleados. Si el cargo no coincide con uno de ellos se les asigna CARGO_DEFAULT
+ */
 public class Empleado {
     private static final String PRE_ID = "EP";
     private static final String CARGO_DIRECTOR = "director";
@@ -25,7 +30,7 @@ public class Empleado {
     }
 
 
-    public void asignarDirector(Empleado director){
+    public void asignarDirector(Empleado director){ //Controla que a un director no se le pueda asginar un director
 
         if (cargo.equals(CARGO_DIRECTOR)){
             this.director = null;
@@ -39,7 +44,7 @@ public class Empleado {
         return id;
     }
 
-    public String setId() {
+    private static String setId() {
        return PRE_ID+contadorID;
     }
 
@@ -55,7 +60,7 @@ public class Empleado {
         return cargo;
     }
 
-    public String setCargo(String cargo) {
+    public String setCargo(String cargo) {//Controla que el cargo que se ha usado es válido entre la lista de  POSIBLES_CARGOS
 
         if (Arrays.asList(POSIBLES_CARGOS).contains(cargo)){
             return cargo;

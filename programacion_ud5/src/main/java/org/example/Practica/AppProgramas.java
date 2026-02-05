@@ -35,6 +35,9 @@ public class AppProgramas {
 
     }
 
+    /*
+    Este metodo recive el nombre de un invitado y dos programas. Entonces encuentra la fecha en la que fue a los programas y las compara. Luego te dice a que programa fue primero. 
+     */
     public static void invitadoAntes (String nombre,Programa programa1, Programa programa2){
 
         LocalDate fecha1 = null;

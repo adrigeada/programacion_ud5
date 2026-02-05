@@ -39,6 +39,9 @@ public class Invitado {
         return fechaVisita;
     }
 
+    /*
+    Este método se usa para que el usuario introduzca por teclado la fecha en la que el invitado fue al programa. El año, mes y dia se guardan en variables int que luego se usan para crear la variable LocalDate
+     */
     public void setFechaVisita() {
         System.out.println("En que año vendrá el invitado "+nombre);
         int anyo = teclado.nextInt();

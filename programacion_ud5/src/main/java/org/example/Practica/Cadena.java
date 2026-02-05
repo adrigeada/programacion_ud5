@@ -15,6 +15,10 @@ public class Cadena {
         listaProgramas.add(programa);
     }
 
+    public void borrarPrograma(Programa programa){
+        listaProgramas.remove(programa);
+    }
+
     public void mostrarListaProgramas (){
         for (Programa programa : listaProgramas){
             System.out.println("- "+programa);

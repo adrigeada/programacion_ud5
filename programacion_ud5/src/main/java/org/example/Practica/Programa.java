@@ -1,6 +1,5 @@
 package org.example.Practica;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Programa {
@@ -20,12 +19,15 @@ public class Programa {
         listaEmpleados = new ArrayList<>();
         listaInvitados = new ArrayList<>();
         setDirector(nombre_director);
-        cadena.anyadirPrograma(this);
+        cadena.anyadirPrograma(this); //Cuando se crea el programa se añade a si mismo a su cadena.
     }
 
 
     //------------------------------------------------
 
+    /*
+    Este método crea empleados dentro de un programa. Si el cargo de este es director, no lo deja crear, porque el director se crea en Programa. Luego se añaden a la lista de empleados.
+     */
     public void anyadirEmpleado(String nombre, String cargo,Empleado director){
         Empleado empleado = new Empleado(nombre,cargo,getDirector());
         if (cargo.equals(CARGO_DIRECTOR)){
@@ -42,6 +44,9 @@ public class Programa {
         listaEmpleados.remove(empleado);
     }
 
+   /*
+   Este método crea invitados y los añade a la lista de invitados
+    */
     public void anyadirInvitado(String nombre,String profesion,int temporada){
         Invitado invitado = new Invitado(nombre,profesion,temporada);
         listaInvitados.add(invitado);
@@ -51,6 +56,9 @@ public class Programa {
         listaInvitados.remove(invitado);
     }
 
+    /*
+    Dada una temporada, este metodo cuenta cuantos invitados han asistido a esta temporada y los enseña
+     */
     public void invitadosTemporada(int temporada){
         int contador = 0;
 
@@ -65,6 +73,9 @@ public class Programa {
 
     }
 
+    /*
+    Dado un nombre de un invitado, este método cuenta cuantas veces ha estado este invitado en un programa. Lo devuelve en un int.
+     */
     public int vecesInvitado(String nombre){
         int contador = 0;
 
@@ -76,6 +87,9 @@ public class Programa {
         return contador;
     }
 
+    /*
+    Dado el nombre de un invitado, este método enseña que días estuvo en el programa
+     */
     public void rastrearInvitado(String nombre){
         int veces = vecesInvitado(nombre);
         System.out.println("El invitado "+nombre+" ha ido "+veces+" veces al programa "+this.nombre);
@@ -88,6 +102,9 @@ public class Programa {
         }
     }
 
+    /*
+    Dado un nombre de un invitado, este método comprueba si el invitado ha ido al programa. Devuelve un booleano
+     */
     public boolean buscarInvitado(String nombre){
         for (Invitado invitado : listaInvitados){
             if (invitado.getNombre().equals(nombre)){
@@ -144,6 +161,9 @@ public class Programa {
         return director;
     }
 
+    /*
+    Cuando se crea el programa, se crea tambien el director que es un empleado que siempre va a tener el cargo "director", por eso se una CARGO_DIRECTOR
+     */
     public void setDirector(String nombre) {
         Empleado director = new Empleado(nombre,CARGO_DIRECTOR,null);
         this.director = director;
