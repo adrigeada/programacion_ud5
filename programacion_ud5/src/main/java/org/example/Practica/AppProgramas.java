@@ -14,7 +14,7 @@ public class AppProgramas {
 
         hormiguero.anyadirEmpleado("Pablito","presentador",null);
         hormiguero.anyadirEmpleado("Paco","director",null);
-        hormiguero.anyadirEmpleado("Vicen","caca",null);
+        hormiguero.anyadirEmpleado("Vicen","programador",null);
         System.out.println(hormiguero);
 
        hormiguero.anyadirInvitado("Aitana","Cantante",1);

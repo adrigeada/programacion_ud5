@@ -6,6 +6,7 @@ public class Empleado {
     private static final String PRE_ID = "EP";
     private static final String CARGO_DIRECTOR = "director";
     private static final String[] POSIBLES_CARGOS = new String[] {"director", "tecnico", "presentador", "colaborador"};
+    private static final String CARGO_DEFAULT = "pte";
 
     private static int contadorID = 0;
 
@@ -59,7 +60,8 @@ public class Empleado {
         if (Arrays.asList(POSIBLES_CARGOS).contains(cargo)){
             return cargo;
         }else {
-            return "pte";
+            System.out.println("El cargo '"+cargo+"' no es posible. Cargo por defecto usado.");
+            return CARGO_DEFAULT;
         }
 
     }
