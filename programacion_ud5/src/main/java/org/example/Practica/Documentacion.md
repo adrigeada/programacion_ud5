@@ -3,9 +3,9 @@
 ## ÍNDICE 
 1. [Intro](https://github.com/adrigeada/programacion_ud5/edit/main/programacion_ud5/src/main/java/org/example/Practica/Documentacion.md#1-intro)
 2. [Estructura de clases](#2-estructura-de-clases)
-    - Diagrama de clases UML
-    - Código de PlantUML
-    - Contenido de las clases .java
+    - [Diagrama de clases UML](#diagrama-de-clases-uml)
+    - [Código de PlantUML](https://github.com/adrigeada/programacion_ud5/edit/main/programacion_ud5/src/main/java/org/example/Practica/Documentacion.md#c%C3%B3digo-de-plantuml)
+    - [Contenido de las clases .java] (https://github.com/adrigeada/programacion_ud5/edit/main/programacion_ud5/src/main/java/org/example/Practica/Documentacion.md#contenido-de-las-clases-java)
 3. [Programa principal (app)](#3-programa-principal-app)
 4. [Pruebas](#4-pruebas)
 5. [Entrega](#5-entrega)
