@@ -56,6 +56,10 @@ public class Empleado {
 
     public String setCargo(String cargo) {
 
+
+
+        if (cargo.equals("director") || cargo.equals("tecnico") || cargo.equals("presentador") || cargo.equals("colaborador")){
+
         if (Arrays.asList(POSIBLES_CARGOS).contains(cargo)){
             return cargo;
         }else {
