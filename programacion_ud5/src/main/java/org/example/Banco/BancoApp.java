@@ -1,8 +1,5 @@
 package org.example.Banco;
 
-import org.example.Banco.Cliente;
-import org.example.Banco.Cuenta;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,6 +7,7 @@ public class BancoApp {
     static Scanner teclado = new Scanner(System.in);
     static ArrayList<Cliente> listaClientes = new ArrayList<>();
     static ArrayList<Cuenta> listaCuentas = new ArrayList<>();
+
     static void main() {
 
         imprimirMenu1();
@@ -75,7 +73,7 @@ public class BancoApp {
         switch (eleccion){
             case 1: //altas
                 listaClientes.add(new Cliente());
-                main();
+                menuClientes();
                 break;
             case 2: //bajas
                 System.out.println("Escribe el nombre que quieres eliminar");
